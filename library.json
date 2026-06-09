@@ -1,0 +1,17 @@
+{
+  "name": "LC_LD2410S",
+  "version": "1.0.0",
+  "description": "LC_LD2410S controller library for ESP32 (ESP-IDF)",
+  "keywords": "events",
+  "authors":
+  [
+    {
+      "name": "Anton Egorov",
+      "email": "ant_leo@mail.ru",
+      "url": "https://leocode.ru"
+    }
+  ],
+  "license": "MIT",
+  "frameworks": ["espidf"],
+  "platforms": ["espressif32"]
+}

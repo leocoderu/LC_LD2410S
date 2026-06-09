@@ -1,0 +1,54 @@
+menu "HLK-LD2410 Configuration"
+
+    orsource "$IDF_PATH/examples/common_components/env_caps/$IDF_TARGET/Kconfig.env_caps"
+
+    config UART_PORT_NUM
+        int "UART port number"
+        range 0 2 if IDF_TARGET_ESP32 || IDF_TARGET_ESP32S3
+        default 2 if IDF_TARGET_ESP32 || IDF_TARGET_ESP32S3
+        range 0 1
+        default 1
+        help
+            UART communication port number.
+            See UART documentation for available port numbers.
+
+    config UART_BAUD_RATE
+        int "UART communication speed"
+        range 1200 115200
+        default 115200
+        help
+            UART communication speed.
+
+    config UART_RXD
+        int "UART RXD pin number"
+        range ENV_GPIO_RANGE_MIN ENV_GPIO_IN_RANGE_MAX
+        default 5 if !IDF_TARGET_ESP32H4
+        default 15 if IDF_TARGET_ESP32H4
+        help
+            GPIO number for UART RX pin. See UART documentation for more information
+            about available pin numbers for UART.
+
+    config UART_TXD
+        int "UART TXD pin number"
+        range ENV_GPIO_RANGE_MIN ENV_GPIO_OUT_RANGE_MAX
+        default 4 if !IDF_TARGET_ESP32H4
+        default 16 if IDF_TARGET_ESP32H4
+        help
+            GPIO number for UART TX pin. See UART documentation for more information
+            about available pin numbers for UART.
+
+    config TASK_STACK_SIZE
+        int "UART echo task stack size"
+        range 1024 16384
+        default 3072
+        help
+            Defines stack size for UART echo. Insufficient stack size can cause crash.
+
+    config SCAN_PERIOD
+        int "Scan period in ms"
+        range 10 3600000
+        default 1000
+        help
+            Define the scanning period in milliseconds.                      
+
+endmenu

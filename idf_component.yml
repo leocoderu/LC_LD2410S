@@ -1,0 +1,6 @@
+version: "1.0.0"
+description: "Component for working with LC_LD2410S human persistence sensor"
+url: "https://github.com/leocoderu/LC_LD2410S"
+license: "MIT"
+files:
+    use_gitignore: true
